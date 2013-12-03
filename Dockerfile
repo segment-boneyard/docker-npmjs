@@ -12,7 +12,7 @@ RUN mkdir -p /opt/node
 RUN curl -L# http://nodejs.org/dist/v0.10.21/node-v0.10.21-linux-x64.tar.gz|tar -zx --strip 1 -C /opt/node
 
 # Download npmjs project
-RUN git clone https://github.com/isaacs/npmjs.org /opt/npmjs
+RUN git clone https://github.com/segmentio/npmjs.org /opt/npmjs
 RUN cd /opt/npmjs; git checkout ea8e7a533ea595db79b24f12c76b62c3889b43e8
 RUN npm install couchapp@0.10.x -g
 RUN cd /opt/npmjs; npm link couchapp; npm install semver
